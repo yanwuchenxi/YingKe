@@ -50,3 +50,9 @@
 - [ ] Lab / WebHome / GitCloud / TMDB：默认关闭（后续开关）
 - [ ] LUT / PDF / sherpa 等：保留代码引用，避免编译破坏；体积优化下一阶段再动
 
+- [x] 开屏仅居中「影」字环饰（去掉影壳/YingKe 字样）
+- [x] 设置中隐藏：实验室 / GitCloud / WebHome 相关入口
+- [x] LabAutoStart 默认 no-op（不后台装环境）
+- [x] 移除仓库内 webhome-devkit、serverless（非运行时）
+- [x] 清空内置 lut_presets（约 11MB assets；用户仍可自选 LUT）
+
