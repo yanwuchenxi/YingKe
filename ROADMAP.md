@@ -73,3 +73,4 @@
 
 - [x] UI：首页底部 Tab 标注 + Surface；点播页搜索胶囊 + M3 分类 Tab；Grid 海报卡 12dp 圆角；详情内容区圆角表面；选集 Chip 化
 
+- [x] 回退上次 UI 试验；按影视仓 Tab+Grid 重做：底栏主页/直播/历史/我的、分类 Tab、海报 Grid、详情线路/选集 Chip

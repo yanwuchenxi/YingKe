@@ -5,9 +5,9 @@
     <string name="app_history">最近观看</string>
 
     <!-- Nav -->
-    <string name="nav_vod">点播</string>
+    <string name="nav_vod">主页</string>
     <string name="nav_live">直播</string>
-    <string name="nav_setting">设置</string>
+    <string name="nav_setting">我的</string>
 
     <!-- Menu -->
     <string name="menu_sync">同步</string>
@@ -125,4 +125,5 @@
         <item>标准</item>
     </string-array>
 
+    <string name="nav_following">历史</string>
 </resources>

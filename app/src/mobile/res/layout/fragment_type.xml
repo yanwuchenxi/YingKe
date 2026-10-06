@@ -18,7 +18,7 @@
             android:clipToPadding="false"
             android:paddingStart="6dp"
             android:paddingEnd="6dp"
-            android:paddingBottom="12dp"
+            android:paddingBottom="16dp"
             tools:listitem="@layout/adapter_vod_rect" />
 
     </com.fongmi.android.tv.ui.custom.ProgressLayout>

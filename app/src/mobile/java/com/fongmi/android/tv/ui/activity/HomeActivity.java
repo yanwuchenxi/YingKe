@@ -114,8 +114,9 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     @Override
     protected void onResume() {
         super.onResume();
-        if (mBinding.navigation.getMenu().findItem(R.id.lab).isVisible() != LabConfig.get().getNavEntry()
-                || mBinding.navigation.getMenu().findItem(R.id.following).isVisible() != FollowingSettings.isEnabled()) setNavigation();
+        // 底栏固定主页/历史/我的；直播随配置，实验室不展示
+        if (mBinding.navigation.getMenu().findItem(R.id.lab).isVisible()
+                || mBinding.navigation.getMenu().findItem(R.id.live).isVisible() != LiveConfig.hasUrl()) setNavigation();
         updateFollowingBadge();
     }
 
@@ -211,12 +212,12 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     }
 
     private void setNavigation() {
+        // 影视仓 Tab 信息架构：主页 / 直播 / 历史 / 我的（实验室不进底栏）
         mBinding.navigation.getMenu().findItem(R.id.vod).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.setting).setVisible(true);
-        // 影壳：底部 Tab 对齐影视仓信息架构，实验室入口关闭
         mBinding.navigation.getMenu().findItem(R.id.lab).setVisible(false);
         mBinding.navigation.getMenu().findItem(R.id.live).setVisible(LiveConfig.hasUrl());
-        mBinding.navigation.getMenu().findItem(R.id.following).setVisible(FollowingSettings.isEnabled());
+        mBinding.navigation.getMenu().findItem(R.id.following).setVisible(true);
         mBinding.navigation.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_LABELED);
         updateFollowingBadge();
         syncNavigationSelection();

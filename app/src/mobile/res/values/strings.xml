@@ -5,9 +5,9 @@
     <string name="app_history">History</string>
 
     <!-- Nav -->
-    <string name="nav_vod">Vod</string>
+    <string name="nav_vod">Home</string>
     <string name="nav_live">Live</string>
-    <string name="nav_setting">Setting</string>
+    <string name="nav_setting">Mine</string>
 
     <!-- Menu -->
     <string name="menu_sync">Sync</string>
@@ -125,4 +125,5 @@
         <item>Standard</item>
     </string-array>
 
+    <string name="nav_following">History</string>
 </resources>
