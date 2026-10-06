@@ -152,7 +152,7 @@
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_item"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal" android:visibility="gone">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                         android:singleLine="true"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        tools:text="https://" />
+                        tools:text="https://"  android:visibility="gone"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -182,7 +182,7 @@
                     android:layout_marginEnd="12dp"
                     android:background="@drawable/shape_item"
                     android:padding="7dp"
-                    android:src="@drawable/ic_setting_home" />
+                    android:src="@drawable/ic_setting_home"  android:visibility="gone"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/wallRefresh"
@@ -190,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_item"
                     android:padding="7dp"
-                    android:src="@drawable/ic_setting_refresh" />
+                    android:src="@drawable/ic_setting_refresh"  android:visibility="gone"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -232,7 +232,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -311,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -328,7 +328,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -345,7 +345,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"

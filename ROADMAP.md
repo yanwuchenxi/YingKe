@@ -56,3 +56,8 @@
 - [x] 移除仓库内 webhome-devkit、serverless（非运行时）
 - [x] 清空内置 lut_presets（约 11MB assets；用户仍可自选 LUT）
 
+- [x] 设置主页隐藏：增强/TMDB/AI/个性化/广告/弹幕设置/字幕设置/壁纸/外观
+- [x] 去掉 jniLibs 中 sherpa、ijk（约数十 MB）；保留小 jar 仅保证编译
+- [x] 去掉 lab 资源、PDF、webhome assets、VodPlus 模板、tflite models
+- [x] 精简壁纸资源
+
