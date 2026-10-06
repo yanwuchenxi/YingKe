@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:tag="port">
+    android:tag="port"
+    android:background="@color/ysc_bg">
 
     <com.fongmi.android.tv.ui.custom.ContextWallImageView
         android:id="@+id/contextWall"

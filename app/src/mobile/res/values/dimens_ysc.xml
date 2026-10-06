@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ysc_home_tab_height">28dp</dimen>
+    <dimen name="ysc_bottom_nav_height">56dp</dimen>
+    <dimen name="ysc_chip_height">32dp</dimen>
+    <dimen name="ysc_chip_radius">4dp</dimen>
+    <dimen name="ysc_poster_radius">8dp</dimen>
+    <dimen name="ysc_search_height">40dp</dimen>
+    <dimen name="ysc_grid_h_padding">6dp</dimen>
+    <dimen name="ysc_grid_item_gap">4dp</dimen>
+</resources>

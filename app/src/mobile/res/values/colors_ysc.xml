@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 影视仓视觉令牌（影壳适配） -->
+<resources>
+    <color name="ysc_accent">#FFFFB40A</color>
+    <color name="ysc_accent_soft">#33FFB40A</color>
+    <color name="ysc_bg">#FF0A0A0A</color>
+    <color name="ysc_surface">#FF121212</color>
+    <color name="ysc_chip">#0FFFFFFF</color>
+    <color name="ysc_chip_stroke">#FFFFB40A</color>
+    <color name="ysc_text_secondary">#B3FFFFFF</color>
+    <color name="ysc_tab_unselected">#99FFFFFF</color>
+    <color name="ysc_divider">#22FFFFFF</color>
+    <color name="ysc_search_bg">#33FFFFFF</color>
+    <color name="ysc_poster_placeholder">#33FFFFFF</color>
+</resources>

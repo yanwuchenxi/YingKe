@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 影视仓式：主内容 + 底部 Tab（主页/直播/历史/我的） -->
+<!-- 影视仓：主内容 + 底部 Tab -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/ysc_bg">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container"
@@ -16,19 +16,19 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@id/navigation"
-        android:background="#22FFFFFF" />
+        android:background="@color/ysc_divider" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/ysc_bottom_nav_height"
         android:layout_alignParentBottom="true"
-        android:background="#FF121212"
+        android:background="@color/ysc_surface"
         app:elevation="0dp"
-        app:itemIconTint="@color/selector_nav"
-        app:itemTextColor="@color/selector_nav"
-        app:itemPaddingTop="6dp"
-        app:itemPaddingBottom="6dp"
+        app:itemIconTint="@color/selector_ysc_nav"
+        app:itemTextColor="@color/selector_ysc_nav"
+        app:itemPaddingTop="4dp"
+        app:itemPaddingBottom="4dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_nav" />
 

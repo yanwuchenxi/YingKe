@@ -16,8 +16,8 @@
             android:layout_height="match_parent"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"
+            android:paddingStart="@dimen/ysc_grid_h_padding"
+            android:paddingEnd="@dimen/ysc_grid_h_padding"
             android:paddingBottom="16dp"
             tools:listitem="@layout/adapter_vod_rect" />
 

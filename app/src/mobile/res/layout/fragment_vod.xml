@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ysc_bg">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -32,9 +33,9 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/ysc_search_height"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/shape_home_search"
+                android:background="@drawable/shape_ysc_search"
                 android:ellipsize="marquee"
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
@@ -42,7 +43,7 @@
                 android:singleLine="true"
                 android:text="@string/app_name"
                 android:textAppearance="@style/ToolbarTextAppearance"
-                android:textColor="#B3FFFFFF"
+                android:textColor="@color/ysc_text_secondary"
                 android:textSize="14sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -50,7 +51,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/typeBar"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="@dimen/ysc_home_tab_height"
+            android:layout_marginBottom="4dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:gravity="center_vertical"

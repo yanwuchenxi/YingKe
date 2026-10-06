@@ -114,7 +114,6 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     @Override
     protected void onResume() {
         super.onResume();
-        // 底栏固定主页/历史/我的；直播随配置，实验室不展示
         if (mBinding.navigation.getMenu().findItem(R.id.lab).isVisible()
                 || mBinding.navigation.getMenu().findItem(R.id.live).isVisible() != LiveConfig.hasUrl()) setNavigation();
         updateFollowingBadge();
@@ -212,7 +211,7 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     }
 
     private void setNavigation() {
-        // 影视仓 Tab 信息架构：主页 / 直播 / 历史 / 我的（实验室不进底栏）
+        // 影视仓底栏：主页 / 直播 / 历史 / 我的
         mBinding.navigation.getMenu().findItem(R.id.vod).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.setting).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.lab).setVisible(false);
