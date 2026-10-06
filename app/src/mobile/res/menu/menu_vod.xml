@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- 顶栏：搜索入口在 title；右侧 历史 / 收藏 / 订阅 -->
     <item
         android:id="@+id/history"
         android:icon="@drawable/ic_popup_history"
@@ -25,22 +24,48 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/more_actions"
-        android:icon="@drawable/ic_action_more_vert"
-        android:title="@string/control_other"
+        android:id="@+id/search"
+        android:icon="@drawable/ic_action_search"
+        android:title="@string/menu_search"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/web_home_fullscreen"
+        android:icon="@drawable/ic_control_fullscreen"
+        android:title="@string/play_fullscreen"
         android:visible="false"
         app:iconTint="@color/white"
-        app:showAsAction="never">
-        <menu>
-            <item
-                android:id="@+id/refresh"
-                android:icon="@drawable/ic_popup_refresh"
-                android:title="@string/live_refresh" />
-            <item
-                android:id="@+id/search"
-                android:icon="@drawable/ic_action_search"
-                android:title="@string/menu_search" />
-        </menu>
-    </item>
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/refresh"
+        android:title="@string/live_refresh"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/sync"
+        android:title="@string/setting_one_key_sync"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/push_apk"
+        android:title="@string/menu_push_apk"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/push_play"
+        android:title="@string/menu_push_play"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/enhance"
+        android:title="@string/setting_enhance"
+        android:visible="false"
+        app:showAsAction="never" />
 
 </menu>
