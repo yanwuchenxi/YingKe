@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/config"
-        android:icon="@drawable/ic_action_sync"
+        android:icon="@drawable/ic_site_change"
         android:title="@string/setting_vod"
         app:iconTint="@color/white"
         app:showAsAction="always" />

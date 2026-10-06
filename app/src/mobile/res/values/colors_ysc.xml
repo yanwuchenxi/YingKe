@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 界面色随壁纸/动态主题；不再写死强调色 -->
 <resources>
     <color name="ysc_bg">#00000000</color>
     <color name="ysc_surface">#00000000</color>
     <color name="ysc_chip">#18FFFFFF</color>
-    <color name="ysc_text_secondary">#B3FFFFFF</color>
-    <color name="ysc_tab_unselected">#99FFFFFF</color>
+    <color name="ysc_text_secondary">#FFFFFFFF</color>
+    <color name="ysc_tab_unselected">#FFFFFFFF</color>
     <color name="ysc_divider">#22FFFFFF</color>
     <color name="ysc_search_bg">#33FFFFFF</color>
     <color name="ysc_poster_placeholder">#22FFFFFF</color>

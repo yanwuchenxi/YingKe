@@ -375,11 +375,15 @@ public class LiveActivity extends PlaybackActivity implements CustomKeyDown.List
 
     private void setupWindowInsets() {
         ViewCompat.setOnApplyWindowInsetsListener(mBinding.getRoot(), (view, insets) -> {
-            // 修复直播页与状态栏重叠：顶栏避开 statusBars
-            int top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
-            int left = insets.getInsets(WindowInsetsCompat.Type.displayCutout()).left;
-            int right = insets.getInsets(WindowInsetsCompat.Type.displayCutout()).right;
-            view.setPadding(left, top, right, view.getPaddingBottom());
+            // 竖屏嵌入：避开状态栏；横屏全屏：扩展到状态栏区域（padding=0）
+            if (isEmbeddedLiveUi()) {
+                int top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
+                int left = insets.getInsets(WindowInsetsCompat.Type.displayCutout()).left;
+                int right = insets.getInsets(WindowInsetsCompat.Type.displayCutout()).right;
+                view.setPadding(left, top, right, view.getPaddingBottom());
+            } else {
+                view.setPadding(0, 0, 0, 0);
+            }
             updateLiveListBottomInset(insets);
             return insets;
         });
@@ -2042,18 +2046,19 @@ public class LiveActivity extends PlaybackActivity implements CustomKeyDown.List
     private void updateSystemUI() {
         updateEmbeddedUiMode();
         updateLiveMenuInsets();
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
         if (isEmbeddedLiveUi()) {
             Util.showSystemUI(this);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            getWindow().setNavigationBarColor(Color.TRANSPARENT);
             WindowInsetsControllerCompat insets = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
             insets.setAppearanceLightStatusBars(false);
             insets.setAppearanceLightNavigationBars(false);
         } else {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            getWindow().setNavigationBarColor(Color.TRANSPARENT);
+            // 横屏全屏播放：沉浸到状态栏并自动隐藏系统栏
             Util.hideSystemUI(this);
+            mBinding.getRoot().setPadding(0, 0, 0, 0);
         }
+        ViewCompat.requestApplyInsets(mBinding.getRoot());
     }
 
     private void updateEmbeddedUiMode() {
