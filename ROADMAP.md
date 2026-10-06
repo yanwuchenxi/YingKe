@@ -64,3 +64,7 @@
 - [x] 按 FongMi 功能面：设置恢复 字幕/弹幕/壁纸；继续隐藏 TMDB/AI/个性化/广告/增强
 - [x] 保留在线字幕搜索（Assrt/Shooter + SubtitleManualSearchDialog）
 
+- [x] 删除设置页扩展模块：Enhance/TMDB/AI/Ad/Personal（Fragment+布局）
+- [x] HomeActivity 仅保留 Vod/设置/播放器/弹幕/字幕 五个 Fragment 位
+- [x] 播放设置按 FongMi 精简展示：内核/渲染/缩放/字幕开关/缓冲/速度/硬解通道/UA 等；隐藏预加载/LUT/蓝光菜单/性能实验等
+

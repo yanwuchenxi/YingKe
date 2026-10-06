@@ -43,13 +43,8 @@ import com.fongmi.android.tv.setting.AutoBackupPolicy;
 import com.fongmi.android.tv.setting.Setting;
 import com.fongmi.android.tv.ui.base.BaseActivity;
 import com.fongmi.android.tv.ui.custom.FragmentStateManager;
-import com.fongmi.android.tv.ui.fragment.SettingEnhanceFragment;
-import com.fongmi.android.tv.ui.fragment.SettingAdFragment;
-import com.fongmi.android.tv.ui.fragment.SettingAiFragment;
-import com.fongmi.android.tv.ui.fragment.SettingTmdbFragment;
 import com.fongmi.android.tv.ui.fragment.SettingDanmakuFragment;
 import com.fongmi.android.tv.ui.fragment.SettingFragment;
-import com.fongmi.android.tv.ui.fragment.SettingPersonalFragment;
 import com.fongmi.android.tv.ui.fragment.SettingPlayerFragment;
 import com.fongmi.android.tv.ui.fragment.SettingSubtitleFragment;
 import com.fongmi.android.tv.ui.fragment.VodFragment;
@@ -164,13 +159,8 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
             case 0 -> VodFragment.newInstance();
             case 1 -> SettingFragment.newInstance();
             case 2 -> SettingPlayerFragment.newInstance();
-            case 3 -> SettingEnhanceFragment.newInstance();
-            case 4 -> SettingDanmakuFragment.newInstance();
-            case 5 -> SettingPersonalFragment.newInstance();
-            case 6 -> SettingSubtitleFragment.newInstance();
-            case 7 -> SettingTmdbFragment.newInstance();
-            case 8 -> SettingAiFragment.newInstance();
-            case 9 -> SettingAdFragment.newInstance();
+            case 3 -> SettingDanmakuFragment.newInstance();
+            case 4 -> SettingSubtitleFragment.newInstance();
             default -> null;
         });
         if (savedInstanceState == null) change(0);
@@ -417,9 +407,9 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     }
 
     public void openEnhanceFromVod() {
-        returnVodFromEnhance = true;
+        // 增强功能已移除，回到通用设置
         setNavigationVisible(true);
-        changeFragment(3);
+        changeFragment(1);
     }
 
     public String getWebHomeChromeMode() {
