@@ -48,7 +48,7 @@ jobs:
       - name: Build mobile arm64 Debug
         run: ./gradlew :app:assembleMobileArm64_v8aDebug --stacktrace --no-daemon
         env:
-          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g"
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g -Dorg.gradle.java.installations.auto-download=false"
 
       - name: Upload APK
         if: success()
