@@ -61,3 +61,6 @@
 - [x] 去掉 lab 资源、PDF、webhome assets、VodPlus 模板、tflite models
 - [x] 精简壁纸资源
 
+- [x] 按 FongMi 功能面：设置恢复 字幕/弹幕/壁纸；继续隐藏 TMDB/AI/个性化/广告/增强
+- [x] 保留在线字幕搜索（Assrt/Shooter + SubtitleManualSearchDialog）
+
