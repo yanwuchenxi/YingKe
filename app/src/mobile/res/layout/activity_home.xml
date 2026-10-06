@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 影视仓：主内容 + 底部 Tab -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ysc_bg">
+    android:background="@color/transparent">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container"
@@ -23,13 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/ysc_bottom_nav_height"
         android:layout_alignParentBottom="true"
-        android:background="@color/ysc_surface"
+        android:background="@color/transparent"
         app:elevation="0dp"
         app:itemIconTint="@color/selector_ysc_nav"
         app:itemTextColor="@color/selector_ysc_nav"
-        app:itemPaddingTop="4dp"
-        app:itemPaddingBottom="4dp"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu_nav" />
 
 </RelativeLayout>

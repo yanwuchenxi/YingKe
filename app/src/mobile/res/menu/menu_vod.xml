@@ -2,13 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_action_search"
-        android:title="@string/menu_search"
-        app:iconTint="@color/white"
-        app:showAsAction="always" />
-
+    <!-- 顶栏：搜索入口在 title；右侧 历史 / 收藏 / 订阅 -->
     <item
         android:id="@+id/history"
         android:icon="@drawable/ic_popup_history"
@@ -17,10 +11,16 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/web_home_fullscreen"
-        android:icon="@drawable/ic_control_fullscreen"
-        android:title="@string/play_fullscreen"
-        android:visible="false"
+        android:id="@+id/keep"
+        android:icon="@drawable/ic_popup_keep"
+        android:title="@string/app_keep"
+        app:iconTint="@color/white"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/config"
+        android:icon="@drawable/ic_action_sync"
+        android:title="@string/setting_vod"
         app:iconTint="@color/white"
         app:showAsAction="always" />
 
@@ -28,39 +28,18 @@
         android:id="@+id/more_actions"
         android:icon="@drawable/ic_action_more_vert"
         android:title="@string/control_other"
+        android:visible="false"
         app:iconTint="@color/white"
-        app:showAsAction="always">
-
+        app:showAsAction="never">
         <menu>
             <item
                 android:id="@+id/refresh"
                 android:icon="@drawable/ic_popup_refresh"
                 android:title="@string/live_refresh" />
-
             <item
-                android:id="@+id/keep"
-                android:icon="@drawable/ic_popup_keep"
-                android:title="@string/app_keep" />
-
-            <item
-                android:id="@+id/sync"
-                android:icon="@drawable/ic_popup_sync"
-                android:title="@string/setting_one_key_sync" />
-
-            <item
-                android:id="@+id/push_apk"
-                android:icon="@drawable/ic_popup_apk"
-                android:title="@string/menu_push_apk" />
-
-            <item
-                android:id="@+id/push_play"
-                android:icon="@drawable/ic_popup_push"
-                android:title="@string/menu_push_play" />
-
-            <item
-                android:id="@+id/enhance"
-                android:icon="@drawable/ic_popup_enhance"
-                android:title="@string/setting_enhance" />
+                android:id="@+id/search"
+                android:icon="@drawable/ic_action_search"
+                android:title="@string/menu_search" />
         </menu>
     </item>
 

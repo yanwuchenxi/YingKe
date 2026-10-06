@@ -115,6 +115,7 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     protected void onResume() {
         super.onResume();
         if (mBinding.navigation.getMenu().findItem(R.id.lab).isVisible()
+                || mBinding.navigation.getMenu().findItem(R.id.following).isVisible()
                 || mBinding.navigation.getMenu().findItem(R.id.live).isVisible() != LiveConfig.hasUrl()) setNavigation();
         updateFollowingBadge();
     }
@@ -211,13 +212,13 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     }
 
     private void setNavigation() {
-        // 影视仓底栏：主页 / 直播 / 历史 / 我的
+        // 底栏：主页 / 直播 / 我的（无文字标签；历史改到顶栏）
         mBinding.navigation.getMenu().findItem(R.id.vod).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.setting).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.lab).setVisible(false);
         mBinding.navigation.getMenu().findItem(R.id.live).setVisible(LiveConfig.hasUrl());
-        mBinding.navigation.getMenu().findItem(R.id.following).setVisible(true);
-        mBinding.navigation.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_LABELED);
+        mBinding.navigation.getMenu().findItem(R.id.following).setVisible(false);
+        mBinding.navigation.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_UNLABELED);
         updateFollowingBadge();
         syncNavigationSelection();
     }

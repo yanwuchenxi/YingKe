@@ -130,7 +130,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
         mBinding.link.setOnClickListener(this::onLink);
         mBinding.typeMore.setOnClickListener(this::onTypeMore);
         mBinding.title.setOnClickListener(this::onSite);
-        mBinding.title.setOnLongClickListener(this::reloadConfig);
+        // title 长按见 setSearchLongClick（站点内搜索）
         mBinding.typeMore.setOnTouchListener(this::onTypeMoreTouch);
         mBinding.typeMore.setOnClickListener(this::onTypeMore);
         mBinding.filter.setOnClickListener(this::onFilter);
@@ -217,7 +217,10 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
     }
 
     private void setTitle() {
-        mBinding.title.setText(AppBranding.getDisplayName(requireContext(), getHome().getDisplayName(), getConfig().getName()));
+        // 搜索条展示当前站点名，点击进搜索
+        String name = AppBranding.getDisplayName(requireContext(), getHome().getDisplayName(), getConfig().getName());
+        mBinding.title.setText(name);
+        mBinding.logo.setContentDescription(getString(R.string.nav_vod));
     }
 
     private void onTop(View view) {
@@ -248,11 +251,18 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
     }
 
     private void onLogo(View view) {
-        HistoryDialog.create().vod().readOnly().show(this);
+        // 站点切换
+        SiteDialog.create().change().show(this);
     }
 
     private void onSite(View view) {
-        SiteDialog.create().change().show(this);
+        // 搜索条入口
+        SearchActivity.start(requireActivity());
+    }
+
+    private void onConfigSwitch(View view) {
+        // 订阅/配置切换
+        HistoryDialog.create().vod().show(this);
     }
 
     private boolean reloadConfig(View view) {
@@ -291,6 +301,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
         } else if (item.getItemId() == R.id.keep) KeepActivity.start(requireActivity());
         else if (item.getItemId() == R.id.search) SearchActivity.start(requireActivity());
         else if (item.getItemId() == R.id.history) HistoryActivity.start(requireActivity());
+        else if (item.getItemId() == R.id.config) HistoryDialog.create().vod().show(this);
         else if (item.getItemId() == R.id.sync) OneKeySyncDialog.create().show(requireActivity());
         else if (item.getItemId() == R.id.push_apk) ApkPushDialog.create().listener(this::onApkDeviceSelected).show(requireActivity());
         else if (item.getItemId() == R.id.push_play) PushPlayDialog.create().listener(this::onPushPlayDeviceSelected).show(requireActivity());
@@ -351,9 +362,8 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
     }
 
     private void setSearchLongClick() {
-        View search = mBinding.toolbar.findViewById(R.id.search);
-        if (search == null) return;
-        search.setOnLongClickListener(view -> {
+        // 搜索条长按：仅在当前站点内搜索
+        mBinding.title.setOnLongClickListener(view -> {
             SearchActivity.start(requireActivity(), "", getHome().getKey());
             return true;
         });
