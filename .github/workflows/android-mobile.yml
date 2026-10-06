@@ -1,0 +1,61 @@
+name: Android Mobile Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Setup Android SDK path
+        run: |
+          echo "ANDROID_HOME=${ANDROID_HOME:-$ANDROID_SDK_ROOT}" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-$ANDROID_HOME}" >> $GITHUB_ENV
+          echo "sdk.dir=${ANDROID_HOME:-$ANDROID_SDK_ROOT}" > local.properties
+          cat local.properties
+
+      - name: Accept licenses & install packages
+        run: |
+          SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          CMDLINE=$(ls -d $SDK/cmdline-tools/*/bin/sdkmanager 2>/dev/null | head -1)
+          echo "sdkmanager=$CMDLINE"
+          yes | $CMDLINE --licenses >/dev/null || true
+          yes | $CMDLINE "platform-tools" "platforms;android-35" "build-tools;35.0.0" "ndk;29.0.14206865" || \
+          yes | $CMDLINE "platform-tools" "platforms;android-34" "build-tools;34.0.0" "ndk;27.0.12077973" || true
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build mobile arm64 Debug
+        run: ./gradlew :app:assembleMobileArm64_v8aDebug --stacktrace --no-daemon
+        env:
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g"
+
+      - name: Upload APK
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yingke-mobile-arm64-debug
+          path: |
+            app/build/outputs/apk/**/*.apk
+            Release/apk/**/*.apk
+          if-no-files-found: warn
