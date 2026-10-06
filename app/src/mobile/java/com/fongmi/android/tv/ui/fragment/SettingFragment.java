@@ -27,6 +27,7 @@ import com.fongmi.android.tv.impl.SiteListener;
 import com.fongmi.android.tv.setting.Setting;
 import com.fongmi.android.tv.ui.activity.HomeActivity;
 import com.fongmi.android.tv.ui.base.BaseFragment;
+import com.fongmi.android.tv.ui.dialog.AdRuleManageDialog;
 import com.fongmi.android.tv.ui.dialog.AboutDialog;
 import com.fongmi.android.tv.ui.dialog.AppearanceDialog;
 import com.fongmi.android.tv.ui.dialog.ChoiceDialog;
@@ -90,6 +91,7 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         mBinding.versionText.setText(AppVersion.fullName());
         setOtherText();
         setCacheText();
+        setAdblockText();
     }
 
     private void setOtherText() {
@@ -115,6 +117,8 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         mBinding.cache.setOnClickListener(this::onCache);
         mBinding.backup.setOnClickListener(this::onBackup);
         mBinding.player.setOnClickListener(this::onPlayer);
+        mBinding.adblock.setOnClickListener(this::onAdblock);
+        mBinding.adblock.setOnLongClickListener(this::onAdRuleManage);
         mBinding.danmaku.setOnClickListener(this::onDanmaku);
         mBinding.subtitle.setOnClickListener(this::onSubtitle);
         mBinding.restore.setOnClickListener(this::onRestore);
@@ -256,6 +260,21 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
 
 
 
+
+
+    private void setAdblockText() {
+        mBinding.adblockText.setText(getSwitch(Setting.isAdblock()));
+    }
+
+    private void onAdblock(View view) {
+        Setting.putAdblock(!Setting.isAdblock());
+        setAdblockText();
+    }
+
+    private boolean onAdRuleManage(View view) {
+        AdRuleManageDialog.create().show(requireActivity(), this::setAdblockText);
+        return true;
+    }
 
     private void onVersion(View view) {
         AboutDialog.show(requireActivity(), () -> Updater.create().force().start(requireActivity()));
