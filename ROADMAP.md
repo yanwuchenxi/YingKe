@@ -41,3 +41,12 @@
 ./gradlew :app:assembleMobileArm64_v8aDebug
 ./gradlew :app:assembleMobileArm64_v8aRelease   # 需配置签名
 ```
+
+## 精简进度（已执行）
+
+- [x] 根目录调试/分析 md 归档至 `docs/archive/`
+- [x] 开屏页品牌化：手机全屏「影壳」启动图 + 统一 startup_logo
+- [x] 发布路径仅 mobile + arm64（CI / 文档约定；v7a/leanback 源码保留便于上游同步）
+- [ ] Lab / WebHome / GitCloud / TMDB：默认关闭（后续开关）
+- [ ] LUT / PDF / sherpa 等：保留代码引用，避免编译破坏；体积优化下一阶段再动
+

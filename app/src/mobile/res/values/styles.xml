@@ -9,6 +9,9 @@
 
     <style name="Theme.Splash" parent="Theme.Base">
         <item name="android:windowBackground">@drawable/mobile_startup_window_background</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.App" parent="Theme.Base" />
