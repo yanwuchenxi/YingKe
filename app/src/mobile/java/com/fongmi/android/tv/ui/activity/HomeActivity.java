@@ -213,9 +213,11 @@ public class HomeActivity extends BaseActivity implements NavigationBarView.OnIt
     private void setNavigation() {
         mBinding.navigation.getMenu().findItem(R.id.vod).setVisible(true);
         mBinding.navigation.getMenu().findItem(R.id.setting).setVisible(true);
-        mBinding.navigation.getMenu().findItem(R.id.lab).setVisible(LabConfig.get().getNavEntry());
+        // 影壳：底部 Tab 对齐影视仓信息架构，实验室入口关闭
+        mBinding.navigation.getMenu().findItem(R.id.lab).setVisible(false);
         mBinding.navigation.getMenu().findItem(R.id.live).setVisible(LiveConfig.hasUrl());
         mBinding.navigation.getMenu().findItem(R.id.following).setVisible(FollowingSettings.isEnabled());
+        mBinding.navigation.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_LABELED);
         updateFollowingBadge();
         syncNavigationSelection();
     }

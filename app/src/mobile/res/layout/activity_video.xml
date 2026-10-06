@@ -122,6 +122,7 @@
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/nativeContentContainer"
+                        android:background="@drawable/shape_detail_surface"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipChildren="false"

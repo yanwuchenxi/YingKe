@@ -71,3 +71,5 @@
 - [x] 删除播放设置中已隐藏项（预加载/LUT/OSD/性能实验/通知等）并精简 SettingPlayerFragment
 - [x] 设置页接入去广告总开关（默认开）+ 长按打开规则管理（HLS 智能去广）
 
+- [x] UI：首页底部 Tab 标注 + Surface；点播页搜索胶囊 + M3 分类 Tab；Grid 海报卡 12dp 圆角；详情内容区圆角表面；选集 Chip 化
+
